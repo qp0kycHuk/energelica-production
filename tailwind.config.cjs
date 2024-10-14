@@ -11,7 +11,7 @@ const headingStyles = {
 }
 
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: ['./src/**/*.{html,js,ts}'],
   darkMode: ['class', '[data-theme="dark"]'],
   future: {
@@ -50,7 +50,7 @@ module.exports = {
       default: withOpacity('--default-rgb'),
     },
     fontFamily: {
-      base: "'Gilroy', arial, helvetica, sans-serif",
+      base: "'Inter', arial, helvetica, sans-serif",
     },
     zIndex: [0, 321, 322, 323, 324, 325, 326, 327, 328, 329, 'auto'],
     extend: {
