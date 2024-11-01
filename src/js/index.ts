@@ -2,11 +2,20 @@ import phonemask from './phonemask/phonemask'
 import ripple from '@qpokychuk/ripple'
 
 import '../scss/index.scss'
-
+import fancybox from './fancybox'
+import swiper from './swiper'
+import animations from './animations'
+import scrollTo from './scrollTo'
+import theme from './theme'
 
 window.addEventListener('DOMContentLoaded', () => loadHandler())
 
 function loadHandler() {
+  animations.init()
+  scrollTo.init()
+  swiper.init()
+  fancybox.init()
+  theme.init()
   ripple.init()
   phonemask.init('[type="tel"]')
 
@@ -42,4 +51,3 @@ function toggleCloseHandler(e: Event) {
     document.body.classList.remove('menu-opened')
   }
 }
-

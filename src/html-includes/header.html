@@ -19,3 +19,15 @@
 </head>
 
 <body>
+
+  <header class="flex items-center py-5 bg-l3 shadow-lg">
+    <load src="/html-includes/logo.html" />
+
+    <div class="flex gap-4 ml-auto">
+      <% for(let i = 0; i < 3; i++) { %>
+      <button class="btn btn-primary btn-sm rounded-lg">
+        <span class="text-default">Menu item</span>
+      </button>
+      <% } %>
+    </div>
+  </header>
