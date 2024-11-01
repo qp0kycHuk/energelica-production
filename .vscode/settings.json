@@ -13,6 +13,9 @@
   "[css]": {
     "editor.defaultFormatter": "MikeBovenlander.formate"
   },
+  "[typescript]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
   "files.exclude": {
     ".vscode": true,
     ".github": true,
