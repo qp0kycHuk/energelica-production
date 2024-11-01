@@ -45,7 +45,6 @@
     "@qpokychuk/wc-menu": "^1.0.11",
     "gsap": "^3.12.2",
     "js-cookie": "^3.0.5",
-    "matter-js": "^0.20.0",
     "npm-kit-tab": "^1.0.0",
     "npm-kit-toggle": "^1.1.0",
     "swiper": "^11.1.4",
