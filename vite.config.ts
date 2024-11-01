@@ -2,7 +2,7 @@ import { defineConfig, normalizePath } from 'vite'
 import path from 'path'
 import fs from 'fs'
 import injectHTML from 'vite-plugin-html-inject'
-import { copy } from 'vite-plugin-copy'
+import { ViteEjsPlugin } from 'vite-plugin-ejs'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 // https://vitejs.dev/config/
@@ -12,6 +12,7 @@ export default defineConfig({
   base: '',
   plugins: [
     injectHTML(),
+    ViteEjsPlugin(),
     viteStaticCopy({
       targets: [...generateDialogEntry('src/html-dialogs')],
     }),
@@ -29,11 +30,11 @@ export default defineConfig({
       input: {
         ...generateHtmlEntry('src'),
       },
+
       output: {
         dir: path.resolve(__dirname, 'dist'),
         assetFileNames: (assetInfo) => {
           const name = assetInfo.names?.[0] || (assetInfo.name as string)
-
           let extType = name.split('.').at(1) as string
 
           if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
