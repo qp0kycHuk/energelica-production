@@ -1,12 +1,16 @@
-<load src="/html-includes/header.html" />
+<include src="/html-includes/header.html" />
 
-<section>
-  index
+<section class="py-16">
+  <div class="title">Index</div>
 </section>
 
-<!-- TODO: dialogs -->
-<!-- TODO: scripts in html -->
+<!-- TODO: scripts in html without DOMContentLoaded -->
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    console.log(Swiper);
 
+  })
+</script>
 
-<load src="/html-includes/footer.html" />
+<include src="/html-includes/footer.html" />

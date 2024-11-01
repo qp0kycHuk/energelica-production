@@ -11,7 +11,9 @@ export default defineConfig({
   publicDir: path.resolve(__dirname, 'public'),
   base: '',
   plugins: [
-    injectHTML(),
+    injectHTML({
+      tagName: 'include',
+    }),
     ViteEjsPlugin(),
     viteStaticCopy({
       targets: [...generateDialogEntry('src/html-dialogs')],
@@ -47,7 +49,8 @@ export default defineConfig({
 
           return `${extType}/[name][extname]`
         },
-        chunkFileNames: 'js/[name].js',
+        chunkFileNames: 'js/index.js',
+        entryFileNames: 'js/index.js',
       },
     },
   },

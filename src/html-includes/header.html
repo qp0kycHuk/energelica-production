@@ -21,13 +21,25 @@
 <body>
 
   <header class="flex items-center py-5 bg-l3 shadow-lg">
-    <load src="/html-includes/logo.html" />
+    <include src="/html-includes/logo.html" />
+
+
 
     <div class="flex gap-4 ml-auto">
-      <% for(let i = 0; i < 3; i++) { %>
-      <button class="btn btn-primary btn-sm rounded-lg">
-        <span class="text-default">Menu item</span>
-      </button>
-      <% } %>
+      <c-menu class="group">
+        <c-menu-button class="btn btn-primary btn-sm  gap-2">
+          <span class="text-default">Menu item</span>
+          <c-icon class="icon text-xs group-data-[active]:-rotate-90" href="img/icons.svg#to-right"></c-icon>
+        </c-menu-button>
+        <c-menu-items class="p-2 flex flex-col gap-1" placement="bottom-end">
+          <% for(let i = 0; i < 3; i++) { %>
+          <c-menu-item>
+            <button class="btn btn-primary btn-sm  w-full">
+              <span class="text-default">Menu item</span>
+            </button>
+          </c-menu-item>
+          <% } %>
+        </c-menu-items>
+      </c-menu>
     </div>
   </header>
