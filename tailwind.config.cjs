@@ -11,7 +11,7 @@ const headingStyles = {
 }
 
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: ['./src/**/*.{html,js,ts}'],
   darkMode: ['class', '[data-theme="dark"]'],
   future: {
@@ -75,7 +75,10 @@ module.exports = {
   },
   plugins: [
     require('@qpokychuk/tailwind-button-plugin')({
-      colorHoverOffset: 15
+      baseStyles: {
+        borderRadius: '8px',
+        justifyContent: 'flex-start'
+      }
     }),
     require('@qpokychuk/tailwind-ratio-plugin'),
     require('@qpokychuk/tailwind-input-plugin')({

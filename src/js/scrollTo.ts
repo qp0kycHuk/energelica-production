@@ -19,7 +19,7 @@ function clickHandler(event: MouseEvent) {
   const elementPosition = elementRect - bodyRect
   const offsetPosition = elementPosition - offset
 
-  setTimeout(() => {
+  Promise.resolve(() => {
     window.scrollTo({
       top: offsetPosition,
       behavior: 'smooth',

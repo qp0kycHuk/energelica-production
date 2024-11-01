@@ -2,13 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  @import '@qpokychuk/ripple/index.css';
-  @import 'swiper/scss';
-  @import '@qpokychuk/wc-menu/dist/index.css'
-}
-
-@import '@qpokychuk/gilroy/index.css';
+// plugins
+@import 'swiper/scss';
 @import 'swiper/scss/pagination';
+@import '@qpokychuk/ripple/index.css';
+@import '@qpokychuk/wc-menu/dist/index.css';
+@import '@qpokychuk/inter/index.css';
 @import '../ui/ui-core';
 @import './style';
