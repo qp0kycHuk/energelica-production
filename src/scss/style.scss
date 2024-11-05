@@ -23,6 +23,10 @@
   --elastic: cubic-bezier(0.34, 2, 0.64, 1);
 }
 
+::selection {
+  background: theme('colors.default');
+  color     : theme('colors.l3');
+}
 
 
 body {
@@ -149,6 +153,7 @@ body {
   display    : flex;
   align-items: flex-start;
   padding-top: 166px;
+  overflow   : hidden;
 
   &-content {
     padding-top: 90px;
@@ -337,5 +342,26 @@ body {
       line-height    : calc(26.4 / 22);
       opacity        : .4;
     }
+  }
+}
+
+.hover3d {
+  &-wrap {
+    transform      : perspective(1000px);
+    transform-style: preserve-3d;
+
+    * {
+      pointer-events: none;
+    }
+  }
+
+  &-target {
+    transform-style: preserve-3d;
+    will-change    : transform;
+  }
+
+  &-up {
+    transform-style: preserve-3d;
+    transform      : translateZ(50px);
   }
 }
