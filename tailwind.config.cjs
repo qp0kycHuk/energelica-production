@@ -1,6 +1,6 @@
 const elementsSizes = {
   xs: '24px',
-  sm: '32px',
+  sm: '38px',
   base: '60px',
   lg: '70px',
   xl: '80px',
@@ -38,6 +38,8 @@ export default {
     colors: {
       primary: withOpacity('--primary-rgb'),
       sec: withOpacity('--sec-rgb'),
+      orange: withOpacity('--orange-rgb'),
+      purple: withOpacity('--purple-rgb'),
       blue: withOpacity('--blue-rgb'),
       red: withOpacity('--red-rgb'),
       green: withOpacity('--green-rgb'),
@@ -50,7 +52,8 @@ export default {
       default: withOpacity('--default-rgb'),
     },
     fontFamily: {
-      base: "'Inter', arial, helvetica, sans-serif",
+      base: "'Futura PT', arial, helvetica, sans-serif",
+      alt: "'Gilroy', arial, helvetica, sans-serif",
     },
     zIndex: [0, 321, 322, 323, 324, 325, 326, 327, 328, 329, 'auto'],
     extend: {
@@ -74,12 +77,7 @@ export default {
     },
   },
   plugins: [
-    require('@qpokychuk/tailwind-button-plugin')({
-      baseStyles: {
-        borderRadius: '8px',
-        justifyContent: 'flex-start'
-      }
-    }),
+    require('@qpokychuk/tailwind-button-plugin')(),
     require('@qpokychuk/tailwind-ratio-plugin'),
     require('@qpokychuk/tailwind-input-plugin')({
       border: "1px solid theme('colors.default / 40%')",

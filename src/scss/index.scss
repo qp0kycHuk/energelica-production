@@ -3,10 +3,15 @@
 @tailwind utilities;
 
 // plugins
-@import 'swiper/scss';
-@import 'swiper/scss/pagination';
-@import '@qpokychuk/ripple/index.css';
-@import '@qpokychuk/wc-menu/dist/index.css';
-@import '@qpokychuk/inter/index.css';
+@layer base {
+  @import 'swiper/scss';
+  @import 'swiper/scss/pagination';
+  @import '@qpokychuk/ripple/index.css';
+  @import '@qpokychuk/wc-menu/dist/index.css';
+
+}
+
+@import '@qpokychuk/gilroy/index.css';
+@import '../fonts/FuturaPT/index.css';
 @import '../ui/ui-core';
 @import './style';
