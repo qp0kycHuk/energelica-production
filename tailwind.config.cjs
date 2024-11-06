@@ -77,7 +77,10 @@ export default {
     },
   },
   plugins: [
-    require('@qpokychuk/tailwind-button-plugin')(),
+    require('@qpokychuk/tailwind-button-plugin')({
+      colorHoverOffset: 0,
+
+    }),
     require('@qpokychuk/tailwind-ratio-plugin'),
     require('@qpokychuk/tailwind-input-plugin')({
       border: "1px solid theme('colors.default / 40%')",
