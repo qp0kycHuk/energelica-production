@@ -5,7 +5,7 @@ import fancybox from './fancybox'
 import swiper from './swiper'
 import animations from './animations'
 import scrollTo from './scrollTo'
-import theme from './theme'
+// import theme from './theme'
 import toggle from 'npm-kit-toggle'
 
 import '../scss/index.scss'
@@ -17,7 +17,6 @@ function loadHandler() {
   scrollTo.init()
   swiper.init()
   fancybox.init()
-  theme.init()
   toggle.init()
   ripple.init()
   phonemask.init('[type="tel"]')

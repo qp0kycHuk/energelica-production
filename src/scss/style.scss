@@ -204,6 +204,7 @@ body {
 
   @media (max-width: theme('screens.lg')) {
     padding-top   : 100px;
+    padding-bottom: 56px;
     flex-direction: column;
     height        : auto;
   }
@@ -230,10 +231,10 @@ body {
   }
 
   &-plate {
-    margin-top : 108px;
-    width      : 426px;
-    padding    : 42px 46px;
-    font-size  : 24px;
+    margin-top : 85px;
+    width      : 350px;
+    padding    : 32px 38px;
+    font-size  : 20px;
     font-weight: 500;
     background : linear-gradient(95deg, #3E2D3F 0%, #8D645C 98.17%);
     clip-path  : polygon(0 0, 100% 22px, calc(100% - 8px) calc(100% - 20px), 18px 100%);
@@ -243,10 +244,12 @@ body {
     }
 
     @media (max-width: theme('screens.sm')) {
-      width      : 100%;
-      font-size  : calc(100vw * 20 / 375);
-      line-height: calc(25.6 / 20);
-      padding    : calc(100vw * 32 / 375);
+      margin-left : auto;
+      margin-right: auto;
+      width       : calc(100% * 298 / 345);
+      font-size   : calc(100vw * 18 / 375);
+      line-height : calc(25.6 / 20);
+      padding     : calc(100vw * 32 / 375) calc(100vw * 28 / 375);
     }
   }
 
@@ -414,7 +417,8 @@ body {
   &-item {
     padding: 40px 32px;
     background:
-      linear-gradient(180deg, theme('colors.default / 10%') 0%, theme('colors.default / 0%') 100%), theme('colors.l3');
+      linear-gradient(130.22deg, rgba(141, 100, 92, 0.3) 0%, rgba(141, 100, 92, 0) 86.04%), theme('colors.l3');
+
     display       : flex;
     flex-direction: column;
     gap           : 48px;
@@ -642,4 +646,47 @@ body {
     visibility    : hidden;
     pointer-events: none;
   }
+}
+
+.dialog {
+  max-width: 100%;
+}
+
+.dialog-form {
+  width     : 758px;
+  padding   : 42px 66px;
+  background: theme('colors.l3');
+  background:
+    radial-gradient(at 0 0, theme('colors.default / 10%') 0%, theme('colors.default / 0%') 40%), theme('colors.l3');
+  position: relative;
+
+
+
+  @media (max-width: theme('screens.sm')) {
+    padding       : 24px;
+    padding-bottom: 40px;
+  }
+}
+
+.dialog-policy {
+  padding   : 32px;
+  width     : 944px;
+  background: theme('colors.l3');
+}
+
+[data-animation^="fade"] {
+  opacity: 0;
+}
+
+.dialog-info {
+  width      : 274px;
+  display    : flex;
+  align-items: center;
+
+  flex-direction: column;
+  background    :
+    linear-gradient(180deg, theme('colors.default / 10%') 0%, theme('colors.default / 0%') 100%), theme('colors.l3');
+  padding-top   : 38px;
+  padding-bottom: 40px;
+  text-align    : center;
 }

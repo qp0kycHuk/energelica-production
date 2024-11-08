@@ -9,10 +9,11 @@
   ],
   "ignorePatterns": [
     "webpack.config.js",
-    "tailwind.config.js",
     "tailwind.config.cjs",
-    "postcss.config.js",
-    "postcss.config.cjs"
+    "postcss.config.cjs",
+    "tailwind.input.js",
+    "tailwind.checkbox.js",
+    "tailwind.button.js"
   ],
   "overrides": [],
   "parser": "@typescript-eslint/parser",

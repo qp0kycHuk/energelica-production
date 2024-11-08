@@ -1,4 +1,4 @@
-<include src="/html-includes/header.html" />
+<%= require('./html-includes/header.html')() %>
 
 <header class="header">
   <button class="btn btn-text lg:hidden" data-toggle-link="menu">
@@ -14,14 +14,14 @@
     <c-icon class="icon text-sm" href="/img/icons.svg#whatsapp"></c-icon>
     <span class="font-medium text-xl">Написать в WhatsApp</span>
   </a>
-  <button class="btn btn-contur btn-primary btn-sm max-sm:hidden">
+  <button class="btn btn-contur btn-primary btn-sm max-sm:hidden" data-fancybox-modal data-src="/dialog-form.html">
     <span class="font-medium uppercase">Отправить заявку</span>
   </button>
 </header>
 
 <div class="menu" id="menu">
   <div class="flex items-center p-4 gap-4">
-    <button class="btn btn-text">
+    <button class="btn btn-text" data-toggle-link="menu">
       <c-icon class="icon text-2.5xl" href="img/icons.svg#cross"></c-icon>
     </button>
     <div class="header-logo mr-auto max-lg:w-32">
@@ -66,60 +66,62 @@
   <div class="started-circle started-circle-2"></div>
 
   <div class="started-content mr-auto">
-    <div class="started-title">
+    <div class="started-title" data-animation="fadeInUp">
       ENERGELICA <br>
       PRODUCTION
     </div>
-    <div class="mt-4 lg:mt-8 font-alt font-semibold sm:text-2xl">
+    <div class="mt-4 lg:mt-8 font-alt font-semibold sm:text-2xl" data-animation="fadeInUp" data-delay="0.025">
       Создаем имидж для компаний, <br>
       брендов и личностей
     </div>
-    <div class="mt-12 lg:mt-15">
-      <button class="btn btn-primary btn-fill px-10">
+    <div class="mt-12 lg:mt-15" data-animation="fadeInUp">
+      <button class="btn btn-primary btn-fill px-10" data-fancybox-modal data-src="/dialog-form.html" data-delay="0.05">
         <span class="font-medium uppercase text-lg">Оставить заявку</span>
       </button>
     </div>
 
-    <div class="started-plate max-lg:hidden">
+    <div class="started-plate max-lg:hidden" data-animation="fadeInUp" data-delay="0.075">
       У вас не будет <span class="text-orange">второго</span> шанса <br>
       произвести <span class="text-orange">первое</span> впечатление
     </div>
   </div>
-  <div class="hover3d-wrap ml-auto lg:p-52 lg:-m-52 max-lg:w-full">
-    <div class="started-image ratio ratio-1/1  hover3d-target">
-      <div class="started-image-rectangle"></div>
-      <img src="/img/started-dude.png" alt="" class="started-image-dude hover3d-up">
+  <div class="ml-auto max-lg:w-full" data-animation="fadeInRight" data-delay="0.05">
+    <div class="hover3d-wrap lg:p-52 lg:-m-52">
+      <div class="started-image ratio ratio-1/1  hover3d-target">
+        <div class="started-image-rectangle"></div>
+        <img src="/img/started-dude.png" alt="" class="started-image-dude hover3d-up">
 
-      <div class="started-image-particle started-image-particle-1 hover3d-up">
-        <img src="/img/started-particle-1.png" alt="" class="hover3d-up">
-      </div>
-      <div class="started-image-particle started-image-particle-2 hover3d-up">
-        <img src="/img/started-particle-2.png" alt="" class="hover3d-up">
-      </div>
-      <div class="started-image-particle started-image-particle-3 hover3d-up">
-        <img src="/img/started-particle-3.png" alt="" class="hover3d-up">
-      </div>
-      <div class="started-image-particle started-image-particle-4 hover3d-up">
-        <img src="/img/started-particle-4.png" alt="" class="hover3d-up">
+        <div class="started-image-particle started-image-particle-1 hover3d-up">
+          <img src="/img/started-particle-1.png" alt="" class="hover3d-up">
+        </div>
+        <div class="started-image-particle started-image-particle-2 hover3d-up">
+          <img src="/img/started-particle-2.png" alt="" class="hover3d-up">
+        </div>
+        <div class="started-image-particle started-image-particle-3 hover3d-up">
+          <img src="/img/started-particle-3.png" alt="" class="hover3d-up">
+        </div>
+        <div class="started-image-particle started-image-particle-4 hover3d-up">
+          <img src="/img/started-particle-4.png" alt="" class="hover3d-up">
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="started-plate lg:hidden">
+  <div class="started-plate lg:hidden" data-animation="fadeInUp">
     У вас не будет <span class="text-orange">второго</span> шанса <br>
     произвести <span class="text-orange">первое</span> впечатление
   </div>
 </section>
 
 <section class="products overflow-hidden">
-  <div class="title sm:text-center mb-6 sm:mb-15">
+  <div class="title sm:text-center mb-6 sm:mb-15" data-animation="fadeInUp">
     Мы продюсируем
   </div>
 
-  <div class="products-slider swiper -mx-2 sm:-mx-3.5 max-sm:overflow-visible">
+  <div class="products-slider swiper -mx-2 sm:-mx-3.5 max-sm:overflow-visible" data-animation="fadeInUp">
     <div class="swiper-wrapper">
       <% for(let i = 0; i < 3; i++) { %>
-      <div class="swiper-slide w-80 sm:w-1/2 lg:w-1/3 px-2 sm:px-3.5 ">
+      <div class="swiper-slide w-80 sm:w-8/12 lg:w-1/3 px-2 sm:px-3.5 ">
         <div class="products-item">
           <div class="products-item-image ratio ratio-[594/380]">
             <img src="/img/test.gif" alt="" class="absolute-fit object-cover">
@@ -135,9 +137,9 @@
                 <li>Motion дизайн</li>
               </ul>
             </div>
-            <button class="btn btn-contur btn-primary w-full mt-8 sm:mt-16">
+            <a href="/#project" data-scroll class="btn btn-contur btn-primary w-full mt-8 sm:mt-16">
               <span class="font-medium uppercase text-lg">СМОТЕРТЬ ПРОЕКТЫ</span>
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -155,14 +157,14 @@
 
 
 <section class="pack">
-  <div class="title sm:text-center mb-6 sm:mb-15">
+  <div class="title sm:text-center mb-6 sm:mb-15" data-animation="fadeInUp">
     Наша «упаковка»
   </div>
-  <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-2 sm:gap-6">
+  <div class="grid md:grid-cols-3 xl:grid-cols-5 gap-2 sm:gap-6">
     <% for(let i = 0; i < 5; i++) { %>
-    <div class="pack-item">
+    <div class="pack-item" data-animation="fadeInUp">
       <img src="/img/pack/<%= i + 1 %>.svg" alt="" class="size-14 md:size-16  block">
-      <div class="text-1.5xl md:text-2.5xl font-medium !leading-tight">
+      <div class="text-1.5xl xl:text-2.5xl font-medium !leading-tight">
         Выгодно выделяет
         Вас среди конкурентов
       </div>
@@ -172,12 +174,12 @@
 </section>
 
 <section class="client">
-  <div class="title sm:text-center mb-6 sm:mb-15">
+  <div class="title sm:text-center mb-6 sm:mb-15" data-animation="fadeInUp">
     Наши клиенты
   </div>
   <div class="grid md:grid-cols-2 gap-2 sm:gap-10">
     <% for(let i = 0; i < 2; i++) { %>
-    <div class="client-item">
+    <div class="client-item" data-animation="fadeInUp">
       <div class="ratio ratio-[900/550]">
         <img src="/img/test.gif" alt="" class="absolute-fit object-cover">
         <div class="client-item-shadow"></div>
@@ -192,18 +194,21 @@
   </div>
 </section>
 
-<section class="project overflow-hidden">
+<section class="project overflow-hidden" id="project">
   <div class="title sm:text-center mb-6 sm:mb-15">
     Наши проекты
   </div>
 
-  <div class="project-slider swiper max-lg:-mx-2 max-lg:overflow-visible">
+  <div class="project-slider swiper max-lg:-mx-2 max-lg:overflow-visible" data-animation="fadeInUp">
     <div class="swiper-wrapper">
       <% for(let i = 0; i < 8; i++) { %>
       <div class="swiper-slide w-80 sm:w-1/2 lg:w-auto max-lg:px-2">
-        <div class="project-item">
+        <div class="project-item group">
           <div class="project-item-image">
-            <img src="/img/project/1.png" alt="">
+            <div class="relative">
+              <img src="/img/project/<%= i + 1 %>.png" alt="" class="transition-opacity duration-300 group-hover:opacity-0">
+              <img src="/img/project/<%= i + 1 %>-color.png" alt="" class="absolute-fit transition-opacity duration-300 opacity-0 group-hover:opacity-100">
+            </div>
           </div>
           <div class="project-item-title">
             «Геленджик Гольф Резорт»
@@ -223,8 +228,8 @@
 </script>
 
 <section class="pray">
-  <img src="/img/pray.jpg" alt="" class="pray-image select-none">
-  <div class="pray-form">
+  <img src="/img/pray.jpg" alt="" class="pray-image select-none" data-animation="fadeInLeft">
+  <div class="pray-form" data-animation="fadeInUp">
     <div class="title">
       Оставьте заявку
     </div>
@@ -247,7 +252,7 @@
       <span class="font-medium uppercase text-lg">отправить </span>
     </button>
     <div class="mt-6">
-      <a href="javascript:;" class="text-xs sm:text-sm font-alt opacity-40 hover:underline !leading-tight">
+      <a href="/dialog-policy.html" data-fancybox-modal class="text-xs sm:text-sm font-alt opacity-40 hover:underline !leading-tight">
         Отправляя форму, Вы даете согласие на обработку Ваших персональных данных
       </a>
     </div>
@@ -285,4 +290,4 @@
   <div class="font-alt font-semibold">© 2024</div>
 </footer>
 
-<include src="/html-includes/footer.html" />
+<%= require('./html-includes/footer.html')() %>

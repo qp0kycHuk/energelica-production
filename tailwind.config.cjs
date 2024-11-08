@@ -12,7 +12,7 @@ const headingStyles = {
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./src/**/*.{html,js,ts}'],
+  content: ['./src/**/*.{html,js,ts}', './public/**/*.{html,js,ts}'],
   darkMode: ['class', '[data-theme="dark"]'],
   future: {
     hoverOnlyWhenSupported: true,
@@ -26,7 +26,7 @@ export default {
       sm: 580 + 29.98 + 'px',
       md: 740 + 29.98 + 'px',
       lg: 1170 + 29.98 + 'px',
-      xl: 1366 + 'px',
+      xl: 1366.98 + 'px',
     },
     container: {
       xs: 420 + 'px',

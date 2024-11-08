@@ -9,6 +9,7 @@ function clickHandler(event: MouseEvent) {
   if ((href[0] != '#' && !href.startsWith('/#')) || href == '#') return
 
   const selector = href.replace('/#', '#')
+
   const element = document.querySelector(selector)
 
   if (!element) return
@@ -19,7 +20,7 @@ function clickHandler(event: MouseEvent) {
   const elementPosition = elementRect - bodyRect
   const offsetPosition = elementPosition - offset
 
-  Promise.resolve(() => {
+  setTimeout(() => {
     window.scrollTo({
       top: offsetPosition,
       behavior: 'smooth',
